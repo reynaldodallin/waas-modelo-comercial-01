@@ -1,55 +1,116 @@
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Landed by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-				<link rel="stylesheet" href="assets/css/custom.css" />
-	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
+<html lang="pt-BR">
+<head>
+	<title>WaaS Modelo Comercial 01</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	/css/main.css" />
+	<noscript>/css/noscript.css" /></noscript>
+	<style>
+		/* Menu hamburger mobile */
+		#navPanelToggle {
+			display: none;
+		}
+		@media screen and (max-width: 980px) {
+			#nav { display: none; }
+			#navPanelToggle {
+				display: block;
+				position: fixed;
+				top: 1rem;
+				right: 1rem;
+				z-index: 10001;
+				width: 3rem;
+				height: 3rem;
+				cursor: pointer;
+			}
+			#navPanelToggle .toggle {
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			#navPanelToggle .toggle:before,
+			#navPanelToggle .toggle:after,
+			#navPanelToggle .toggle span {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0.5rem;
+				right: 0.5rem;
+				height: 3px;
+				background: #fff;
+				transition: all 0.3s ease;
+			}
+			#navPanelToggle .toggle:before { top: 0.75rem; }
+			#navPanelToggle .toggle span { top: 1.35rem; }
+			#navPanelToggle .toggle:after { top: 2rem; }
+			
+			body.navPanel-visible #navPanelToggle .toggle:before { transform: translateY(0.6rem) rotate(45deg); }
+			body.navPanel-visible #navPanelToggle .toggle span { opacity: 0; }
+			body.navPanel-visible #navPanelToggle .toggle:after { transform: translateY(-0.65rem) rotate(-45deg); }
+			
+			#navPanel {
+				position: fixed;
+				top: 0;
+				right: -20rem;
+				width: 20rem;
+				height: 100%;
+				background: rgba(27,31,34,0.98);
+				z-index: 10000;
+				transition: right 0.3s ease;
+				padding: 5rem 2rem 2rem;
+				overflow-y: auto;
+			}
+			body.navPanel-visible #navPanel {
+				right: 0;
+			}
+			#navPanel nav ul {
+				list-style: none;
+				padding: 0;
+			}
+			#navPanel nav ul li {
+				border-bottom: 1px solid rgba(255,255,255,0.1);
+			}
+			#navPanel nav ul li a {
+				display: block;
+				padding: 1rem 0;
+				color: #fff;
+				text-decoration: none;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				font-size: 0.9rem;
+			}
+		}
+		
+		/* Header transparente */
+		#header {
+			background: transparent;
+			transition: background 0.3s ease, box-shadow 0.3s ease;
+		}
+		body.scrolled #header {
+			background: rgba(27,31,34,0.95);
+			box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		}
+	</style>
+</head>
+<body class="is-preload landing">
+	<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Landed</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html">WaaS Modelo 01</a></h1>
+			<nav id="nav">
+				<ul>
+					><a href="index.html" class="active">Home</a></li>
+					><a href="servicos.html">Serviços</a></li>
+					><a href="sobre.html">Sobre</a></li>
+					><a href="contato.html" class="button primary">Contato</a></li>
+				</ul>
+			</nav>
+		</header>
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-
-								<!-- Mobile Nav Toggle -->
+		<!-- Mobile Nav Toggle -->
 		<a href="#navPanel" id="navPanelToggle">
 			<span class="toggle"><span></span></span>
 		</a>
@@ -58,182 +119,196 @@
 		<div id="navPanel">
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="servicos.html">Serviços</a></li>
-					<li><a href="sobre.html">Sobre</a></li>
-					<li><a href="contato.html">Contato</a></li>
+					><a href="index.html">Home</a></li>
+					><a href="servicos.html">Serviços</a></li>
+					><a href="sobre.html">Sobre</a></li>
+					><a href="contato.html">Contato</a></li>
 				</ul>
 			</nav>
 		</div>
 
-		<!-- Overlay para menu mobile -->
-		<div id="navPanel-overlay"></div>
-						<header>
-							<h2>The future has landed</h2>
-							<p>And there are no hoverboards or flying cars.<br />
-							Just apps. Lots of mother flipping apps.</p>
-						</header>
-						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+		<!-- Banner -->
+		<section id="banner">
+			<div class="content">
+				<header>
+					<h2>O futuro chegou</h2>
+					<p>Soluções digitais completas<br />
+					para o seu negócio crescer.</p>
+				</header>
+				<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+			</div>
+			<a href="#one" class="goto-next scrolly">Próximo</a>
+		</section>
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<h2>Odio faucibus ipsum integer consequat</h2>
-										<p>Nascetur eu nibh vestibulum amet gravida nascetur praesent</p>
-									</header>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>Feugiat accumsan lorem eu ac lorem amet sed accumsan donec.
-									Blandit orci porttitor semper. Arcu phasellus tortor enim mi
-									nisi praesent dolor adipiscing. Integer mi sed nascetur cep aliquet
-									augue varius tempus lobortis porttitor accumsan consequat
-									adipiscing lorem dolor.</p>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>Morbi enim nascetur et placerat lorem sed iaculis neque ante
-									adipiscing adipiscing metus massa. Blandit orci porttitor semper.
-									Arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
-									mi sed nascetur cep aliquet augue varius tempus. Feugiat lorem
-									ipsum dolor nullam.</p>
-								</div>
-							</div>
+		<!-- One -->
+		<section id="one" class="spotlight style1 bottom">
+			<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+			<div class="content">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-12-medium">
+							<header>
+								<h2>Transforme sua presença digital</h2>
+								<p>Criamos experiências digitais que convertem visitantes em clientes</p>
+							</header>
+						</div>
+						<div class="col-4 col-12-medium">
+							<p>Com mais de 10 anos de experiência no mercado digital, oferecemos soluções completas para empresas que querem crescer online. Desde a criação de sites profissionais até estratégias de marketing digital.</p>
+						</div>
+						<div class="col-4 col-12-medium">
+							<p>Nossa abordagem combina design moderno, tecnologia de ponta e estratégias comprovadas para entregar resultados reais. Cada projeto é tratado com atenção aos detalhes e foco em performance.</p>
 						</div>
 					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
+				</div>
+			</div>
+			<a href="#two" class="goto-next scrolly">Próximo</a>
+		</section>
 
-			<!-- Two -->
-				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Interdum amet non magna accumsan</h2>
-							<p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
-						</header>
-						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
+		<!-- Two -->
+		<section id="two" class="spotlight style2 right">
+			<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+			<div class="content">
+				<header>
+					<h2>Sites que vendem</h2>
+					<p>Design profissional focado em conversão</p>
+				</header>
+				<p>Desenvolvemos sites responsivos e otimizados que não apenas impressionam visualmente, mas também geram resultados mensuráveis para o seu negócio.</p>
+				<ul class="actions">
+					><a href="servicos.html" class="button">Saiba Mais</a></li>
+				</ul>
+			</div>
+			<a href="#three" class="goto-next scrolly">Próximo</a>
+		</section>
+
+		<!-- Three -->
+		<section id="three" class="spotlight style3 left">
+			<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+			<div class="content">
+				<header>
+					<h2>Marketing que funciona</h2>
+					<p>Estratégias digitais que trazem resultados reais</p>
+				</header>
+				<p>Criamos campanhas de marketing digital personalizadas para aumentar sua visibilidade online, gerar leads qualificados e impulsionar suas vendas.</p>
+				<ul class="actions">
+					><a href="servicos.html" class="button">Ver Serviços</a></li>
+				</ul>
+			</div>
+			<a href="#four" class="goto-next scrolly">Próximo</a>
+		</section>
+
+		<!-- Four -->
+		<section id="four" class="wrapper style1 special fade-up">
+			<div class="container">
+				<header class="major">
+					<h2>Por que escolher a WaaS?</h2>
+					<p>Somos especialistas em criar soluções digitais que geram resultados</p>
+				</header>
+				<div class="box alt">
+					<div class="row gtr-uniform">
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-chart-area"></span>
+							<h3>Resultados Mensuráveis</h3>
+							<p>Acompanhamento completo de métricas e ROI em tempo real.</p>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-comment"></span>
+							<h3>Atendimento Dedicado</h3>
+							<p>Suporte personalizado para o sucesso do seu projeto.</p>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-flask"></span>
+							<h3>Tecnologia de Ponta</h3>
+							<p>Utilizamos as melhores ferramentas e práticas do mercado.</p>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-paper-plane"></span>
+							<h3>Entrega Rápida</h3>
+							<p>Projetos entregues no prazo com qualidade garantida.</p>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-file"></span>
+							<h3>SEO Otimizado</h3>
+							<p>Sites otimizados para aparecer no Google desde o primeiro dia.</p>
+						</section>
+						<section class="col-4 col-6-medium col-12-xsmall">
+							<span class="icon solid alt major fa-lock"></span>
+							<h3>Segurança Total</h3>
+							<p>Proteção completa dos seus dados e do seu site.</p>
+						</section>
 					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
-
-			<!-- Three -->
-				<section id="three" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Interdum felis blandit praesent sed augue</h2>
-							<p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
-						</header>
-						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
-
-			<!-- Four -->
-				<section id="four" class="wrapper style1 special fade-up">
-					<div class="container">
-						<header class="major">
-							<h2>Accumsan sed tempus adipiscing blandit</h2>
-							<p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
-						</header>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-chart-area"></span>
-									<h3>Ipsum sed commodo</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-comment"></span>
-									<h3>Eleifend lorem ornare</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-flask"></span>
-									<h3>Cubilia cep lobortis</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-paper-plane"></span>
-									<h3>Non semper interdum</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-file"></span>
-									<h3>Odio laoreet accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-lock"></span>
-									<h3>Massa arcu accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-							</div>
-						</div>
-						<footer class="major">
-							<ul class="actions special">
-								<li><a href="#" class="button">Magna sed feugiat</a></li>
-							</ul>
-						</footer>
-					</div>
-				</section>
-
-			<!-- Five -->
-				<section id="five" class="wrapper style2 special fade">
-					<div class="container">
-						<header>
-							<h2>Magna faucibus lorem diam</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
-						</header>
-						<form method="post" action="#" class="cta">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-							</div>
-						</form>
-					</div>
-				</section>
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</div>
+				<footer class="major">
+					<ul class="actions special">
+						><a href="contato.html" class="button">Comece Agora</a></li>
 					</ul>
 				</footer>
+			</div>
+		</section>
 
-		</div>
+		<!-- Five -->
+		<section id="five" class="wrapper style2 special fade">
+			<div class="container">
+				<header>
+					<h2>Pronto para crescer online?</h2>
+					<p>Fale conosco e descubra como podemos ajudar seu negócio</p>
+				</header>
+				<ul class="actions special">
+					><a href="contato.html" class="button fit primary">Falar com um Especialista</a></li>
+					><a href="sobre.html" class="button fit">Conhecer a Agência</a></li>
+				</ul>
+			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+				><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+				><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+				><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+				><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				>&copy; WaaS Modelo 01. Todos os direitos reservados.</li>>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
 
-				<script src="assets/js/custom.js"></script>
-	</body>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	<script>
+		// Header transparente no scroll
+		window.addEventListener('scroll', function() {
+			if (window.scrollY > 100) {
+				document.body.classList.add('scrolled');
+			} else {
+				document.body.classList.remove('scrolled');
+			}
+		});
+		
+		// Mobile menu toggle
+		document.getElementById('navPanelToggle').addEventListener('click', function(e) {
+			e.preventDefault();
+			document.body.classList.toggle('navPanel-visible');
+		});
+		
+		// Fechar menu ao clicar em link
+		document.querySelectorAll('#navPanel a').forEach(function(link) {
+			link.addEventListener('click', function() {
+				document.body.classList.remove('navPanel-visible');
+			});
+		});
+	</script>
+
+</body>
 </html>
